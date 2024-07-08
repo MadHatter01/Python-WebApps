@@ -1,17 +1,28 @@
 import streamlit as st
 import time
+from openai import OpenAI
+
+client = OpenAI()
 
 st.title("Product Copy Generator")
 st.write("Generate catchy copy for your product!")
 
-def generate_product_copy(prompt):
-    return prompt
+def generate_product_copy(prompt, max_tokens = 100):
+    response = client.chat.completions.create(
+        model = "gpt-3.5-turbo",
+        messages = [
+            {"role": "system", "content": "You are an experienced copywriter specializing in creating engaging product copy and taglines."},
+            {"role": "user", "content": prompt}
+        ],
+        max_tokens = max_tokens
+    )
+    return response.choices[0].message.content
 
 product_name = st.text_input("Product Name")
 product_description = st.text_area("Product Description")
 
-col1, col2, colx = st.columns([2.5,3,7])
-
+# col1, col2, colx = st.columns([2.5,3,7])
+col1, col2 = st.columns(2)
 
 with col1:
     if st.button("Generate Copy", type="primary"):
