@@ -13,3 +13,12 @@ df = data.history(period="1mo")
 
 st.subheader(f"Stock data for {stock_symbol.upper()}")
 st.write(df)
+
+st.subheader("Volume Chart")
+fig, ax = plt.subplots()
+ax.bar(df.index, df['Volume'])
+ax.set_xlabel('Date')
+plt.xticks(rotation=45)
+ax.set_ylabel('Volume')
+ax.set_title(f'Trading volume of {stock_symbol.upper()} over the last one month')
+st.pyplot(fig)
