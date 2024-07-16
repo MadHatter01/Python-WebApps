@@ -30,4 +30,5 @@ Streamlit is an open-source Python library that makes it easy to create and shar
 ## Examples
 - Create wordclouds based on text input
 - Generate product copy and tagline using LLM
-
+- Mathematical Visualization 
+- GIS Data visualization 
