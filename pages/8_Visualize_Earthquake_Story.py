@@ -7,6 +7,7 @@ file_upload = st.file_uploader("Choose a CSV file with lat and lon", type="csv")
 if file_upload is not None:
     data = pd.read_csv(file_upload)
   
+    #data taken from https://www.ngdc.noaa.gov/hazard/eq-intensity.shtml
 
     data['MONTH'].fillna(1, inplace=True)
     data['DAY'].fillna(1, inplace=True)
