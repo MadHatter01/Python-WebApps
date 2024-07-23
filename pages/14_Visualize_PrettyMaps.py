@@ -3,6 +3,9 @@ import prettymaps
 import matplotlib.pyplot as plt
 import io
 
+
+# references prettymaps from https://github.com/marceloprates/prettymaps
+
 def plot_map(location):
     fig, ax = plt.subplots(figsize=(20, 16))
     ax.set_facecolor('none')
