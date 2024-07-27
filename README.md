@@ -35,3 +35,5 @@ Streamlit is an open-source Python library that makes it easy to create and shar
 - Shape data Visualization
 - Visualize CSV data from coordinates
 - Playback and Animation
+- Visualize Heatmaps and Use PrettyMaps
+- Generate speech from text and visualize it
